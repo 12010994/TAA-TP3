@@ -15,8 +15,7 @@ import server.ChatRoom;
 import com.sun.security.auth.callback.DialogCallbackHandler;
 
 
-public class ChatUserImpl extends UnicastRemoteObject implements ChatUser,
-		Runnable, User {
+public class ChatUserImpl extends UnicastRemoteObject implements ChatUser, Runnable, User {
 	private ChatRoom room = null;
 
 	private String pseudo = null;
@@ -40,7 +39,7 @@ public class ChatUserImpl extends UnicastRemoteObject implements ChatUser,
 		// this.requestPseudo();
 	}
 
-	public void createIHM() {
+	public void createIHM() { 
 		Commande unreg = new CommandeUnregister(room);
 		unreg.setUser(this);
 		Commande post = new CommandPost(room);
